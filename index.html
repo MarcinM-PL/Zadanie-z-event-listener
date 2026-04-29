@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Czy mogę już iść do domu</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <div>
+        <h1>Czy mogę już iść do domu</h1>
+        <p id="czas">Godzina: 14:<input type="text" name="min" id="min" maxlength="2"></p>
+        <input type="submit" value="Sprawdź" id="sprawdz">
+        <p id="wynik"></p>
+    </div>
+    <script>
+        let przycisk = document.getElementById('sprawdz')
+        let minuty = document.getElementById('min')
+        let wynik =document.getElementById('wynik')
+        let godzina = 14
+        przycisk.addEventListener("click",czas)
+        function czas(){
+            let min = minuty.value
+            if(min>55){
+                wynik.innerHTML = `Czas rozpocząć popołudnie`
+                wynik.style.backgroundColor = `green`
+                wynik.style.border = `1px solid black`
+            }
+            else if(min<=55){
+                wynik.innerHTML = `Jeszcze się musimy pouczyć`
+                wynik.style.backgroundColor = `red`
+                wynik.style.border = `1px solid black`
+            }
+        }
+    </script>
+</body>
+</html>
